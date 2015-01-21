@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"go/parser"
 	"go/token"
+	"strings"
 )
 
 func genEntry(filename, used, text string, start, end int) {
@@ -15,7 +16,15 @@ msgid ""
 msgstr ""
 `
 	lens := end - start + 1
-	fmt.Printf(format, used, filename, start, lens, text)
+	strs := strings.Split(text, "\n")
+	m := strs[:len(strs)-1]
+	for k, v := range m {
+		if len(v) == 0 {
+			m[k] = "\\n"
+		}
+	}
+	msgid := strings.Join(m, "\"\n\"")
+	fmt.Printf(format, used, filename, start, lens, msgid)
 }
 
 func main() {
@@ -28,7 +37,6 @@ func main() {
 	for _, s := range f.Comments {
 		start_pos := fset.Position(s.Pos())
 		end_pos := fset.Position(s.End())
-		//fmt.Println(start_pos.Line, lens, "~", end_pos.Line, ":", s.Text())
 		genEntry("io.go", "func Hi", s.Text(), start_pos.Line, end_pos.Line)
 	}
 }
