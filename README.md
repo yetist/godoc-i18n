@@ -6,7 +6,7 @@
 
 模拟翻译过程如下：
 
-{{{
+```
 生成golang 1.3版本的pot文件...
 golang 1.3版本的pot文件已经生成：go1.3/io.pot
 
@@ -21,14 +21,14 @@ golang 1.4版本的pot文件已经生成：go1.4/io.pot
 
 更新golang 1.3版本的翻译成果到1.4版本中...
 golang 1.4版本po文件已经生成，并集成了1.3版本的翻译成果：io-1.4.po
-}}}
+```
 
 翻译完成之后，请对比io.po和io-1.4.po，分别对应于golang 1.3和1.4版本，这是翻译成果。
 
 后续方案设想：
 
 1. 根据po文件中的行号信息，直接将翻译的中文替换到源文件中，如下面示例中的#: go1.4/io.go:480:5，表示io.go文件中从第480行开始的5行内容需要替换掉。
-{{{
+```
 #. used by: func()这是上下文:
 #: go1.4/io.go:480:5
 msgid ""
@@ -37,7 +37,7 @@ msgid ""
 "There is no internal buffering -the write must complete before the read "
 "completes.Any error encountered while writing is reported as a read error."
 msgstr "翻译测试"
-}}}
+```
 
 对于一些用户系统中本身已经存在了golang，源代码是英文的用户，可将po文件和相应的合并工具单独发布，由运行自行运行进行翻译成果合并。
 

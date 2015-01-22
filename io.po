@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-06 00:11+0800\n"
-"PO-Revision-Date: 2015-01-05 17:59+0800\n"
+"POT-Creation-Date: 2015-01-11 17:06+0800\n"
+"PO-Revision-Date: 2015-01-11 16:25+0800\n"
 "Last-Translator: yetist <yetist@gmail.com>\n"
 "Language-Team: Chinese (simplified)\n"
 "Language: zh_CN\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. used by: func Hi:
-#: io.go:1:3
+#: go1.3/io.go:1:3
 msgid ""
 "Copyright 2009 The Go Authors. All rights reserved."
 "Use of this source code is governed by a BSD-style"
@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:5:8
+#: go1.3/io.go:5:8
 msgid ""
 "Package io provides basic interfaces to I/O primitives."
 "Its primary job is to wrap existing implementations of such primitives,"
@@ -39,20 +39,20 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:19:2
+#: go1.3/io.go:19:2
 msgid ""
 "ErrShortWrite means that a write accepted fewer bytes than requested"
 "but failed to return an explicit error."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:23:1
+#: go1.3/io.go:23:1
 msgid ""
 "ErrShortBuffer means that a read required a longer buffer than was provided."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:26:5
+#: go1.3/io.go:26:5
 msgid ""
 "EOF is the error returned by Read when no more input is available."
 "Functions should return EOF only to signal a graceful end of input."
@@ -62,14 +62,14 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:33:2
+#: go1.3/io.go:33:2
 msgid ""
 "ErrUnexpectedEOF means that EOF was encountered in the"
 "middle of reading a fixed-size block or data structure."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:37:3
+#: go1.3/io.go:37:3
 msgid ""
 "ErrNoProgress is returned by some clients of an io.Reader when"
 "many calls to Read have failed to return any data or error,"
@@ -77,7 +77,7 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:42:28
+#: go1.3/io.go:42:25
 msgid ""
 "Reader is the interface that wraps the basic Read method."
 "\n"
@@ -102,15 +102,12 @@ msgid ""
 "allowed EOF behaviors."
 "\n"
 "Implementations of Read are discouraged from returning a"
-"zero byte count with a nil error, except when len(p) == 0."
-"Callers should treat a return of 0 and nil as indicating that"
-"nothing happened; in particular it does not indicate EOF."
-"\n"
-"Implementations must not retain p."
+"zero byte count with a nil error, and callers should treat"
+"that situation as a no-op."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:74:9
+#: go1.3/io.go:71:7
 msgid ""
 "Writer is the interface that wraps the basic Write method."
 "\n"
@@ -119,12 +116,10 @@ msgid ""
 "and any error encountered that caused the write to stop early."
 "Write must return a non-nil error if it returns n < len(p)."
 "Write must not modify the slice data, even temporarily."
-"\n"
-"Implementations must not retain p."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:87:4
+#: go1.3/io.go:82:4
 msgid ""
 "Closer is the interface that wraps the basic Close method."
 "\n"
@@ -133,7 +128,7 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:95:11
+#: go1.3/io.go:90:11
 msgid ""
 "Seeker is the interface that wraps the basic Seek method."
 "\n"
@@ -149,49 +144,49 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:110:1
+#: go1.3/io.go:105:1
 msgid ""
 "ReadWriter is the interface that groups the basic Read and Write methods."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:116:1
+#: go1.3/io.go:111:1
 msgid ""
 "ReadCloser is the interface that groups the basic Read and Close methods."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:122:1
+#: go1.3/io.go:117:1
 msgid ""
 "WriteCloser is the interface that groups the basic Write and Close methods."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:128:1
+#: go1.3/io.go:123:1
 msgid ""
 "ReadWriteCloser is the interface that groups the basic Read, Write and Close methods."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:135:1
+#: go1.3/io.go:130:1
 msgid ""
 "ReadSeeker is the interface that groups the basic Read and Seek methods."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:141:1
+#: go1.3/io.go:136:1
 msgid ""
 "WriteSeeker is the interface that groups the basic Write and Seek methods."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:147:1
+#: go1.3/io.go:142:1
 msgid ""
 "ReadWriteSeeker is the interface that groups the basic Read, Write and Seek methods."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:154:7
+#: go1.3/io.go:149:7
 msgid ""
 "ReaderFrom is the interface that wraps the ReadFrom method."
 "\n"
@@ -203,7 +198,7 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:165:7
+#: go1.3/io.go:160:7
 msgid ""
 "WriterTo is the interface that wraps the WriteTo method."
 "\n"
@@ -215,7 +210,7 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:176:26
+#: go1.3/io.go:171:24
 msgid ""
 "ReaderAt is the interface that wraps the basic ReadAt method."
 "\n"
@@ -241,12 +236,10 @@ msgid ""
 "\n"
 "Clients of ReadAt can execute parallel ReadAt calls on the"
 "same input source."
-"\n"
-"Implementations must not retain p."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:206:15
+#: go1.3/io.go:199:13
 msgid ""
 "WriterAt is the interface that wraps the basic WriteAt method."
 "\n"
@@ -261,12 +254,10 @@ msgid ""
 "\n"
 "Clients of WriteAt can execute parallel WriteAt calls on the same"
 "destination if the ranges do not overlap."
-"\n"
-"Implementations must not retain p."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:225:4
+#: go1.3/io.go:216:4
 msgid ""
 "ByteReader is the interface that wraps the ReadByte method."
 "\n"
@@ -275,7 +266,7 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:233:7
+#: go1.3/io.go:224:7
 msgid ""
 "ByteScanner is the interface that adds the UnreadByte method to the"
 "basic ReadByte method."
@@ -287,13 +278,13 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:245:1
+#: go1.3/io.go:236:1
 msgid ""
 "ByteWriter is the interface that wraps the WriteByte method."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:250:5
+#: go1.3/io.go:241:5
 msgid ""
 "RuneReader is the interface that wraps the ReadRune method."
 "\n"
@@ -303,7 +294,7 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:259:7
+#: go1.3/io.go:250:7
 msgid ""
 "RuneScanner is the interface that adds the UnreadRune method to the"
 "basic ReadRune method."
@@ -315,20 +306,20 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:271:1
+#: go1.3/io.go:262:1
 msgid ""
 "stringWriter is the interface that wraps the WriteString method."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:276:2
+#: go1.3/io.go:267:2
 msgid ""
 "WriteString writes the contents of the string s to w, which accepts an array of bytes."
 "If w already implements a WriteString method, it is invoked directly."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:285:7
+#: go1.3/io.go:276:7
 msgid ""
 "ReadAtLeast reads from r into buf until it has read at least min bytes."
 "It returns the number of bytes copied and an error if fewer bytes were read."
@@ -340,7 +331,7 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:309:6
+#: go1.3/io.go:300:6
 msgid ""
 "ReadFull reads exactly len(buf) bytes from r into buf."
 "It returns the number of bytes copied and an error if fewer bytes were read."
@@ -351,7 +342,7 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:319:7
+#: go1.3/io.go:310:7
 msgid ""
 "CopyN copies n bytes (or until an error) from src to dst."
 "It returns the number of bytes copied and the earliest"
@@ -363,13 +354,13 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:332:1
+#: go1.3/io.go:323:1
 msgid ""
 "src stopped early; must have been EOF."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:338:12
+#: go1.3/io.go:329:12
 msgid ""
 "Copy copies from src to dst until either EOF is reached"
 "on src or an error occurs.  It returns the number of bytes"
@@ -386,20 +377,20 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:351:2
+#: go1.3/io.go:342:2
 msgid ""
 "If the reader has a WriteTo method, use it to do the copy."
 "Avoids an allocation and a copy."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:356:1
+#: go1.3/io.go:347:1
 msgid ""
 "Similarly, if the writer has a ReadFrom method, use it to do the copy."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:388:3
+#: go1.3/io.go:379:3
 msgid ""
 "LimitReader returns a Reader that reads from r"
 "but stops with EOF after n bytes."
@@ -407,7 +398,7 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:393:3
+#: go1.3/io.go:384:3
 msgid ""
 "A LimitedReader reads from R but limits the amount of"
 "data returned to just N bytes. Each call to Read"
@@ -415,43 +406,43 @@ msgid ""
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:397:1
+#: go1.3/io.go:388:1
 msgid ""
 "underlying reader"
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:398:1
+#: go1.3/io.go:389:1
 msgid ""
 "max bytes remaining"
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:413:2
+#: go1.3/io.go:404:2
 msgid ""
 "NewSectionReader returns a SectionReader that reads from r"
 "starting at offset off and stops with EOF after n bytes."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:419:2
+#: go1.3/io.go:410:2
 msgid ""
 "SectionReader implements Read, Seek, and ReadAt on a section"
 "of an underlying ReaderAt."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:477:1
+#: go1.3/io.go:468:1
 msgid ""
 "Size returns the size of the section in bytes."
 msgstr ""
 
 #. used by: func Hi:
-#: io.go:480:5
+#: go1.3/io.go:471:5
 msgid ""
 "TeeReader returns a Reader that writes to w what it reads from r."
 "All reads from r performed through it are matched with"
 "corresponding writes to w.  There is no internal buffering -"
 "the write must complete before the read completes."
 "Any error encountered while writing is reported as a read error."
-msgstr ""
+msgstr "翻译测试"
